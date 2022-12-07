@@ -11,7 +11,7 @@ import requests
 # -- Info for every Hack-A-Day project --
 load_info({
     "project_name": "Hack-A-TV-Guide",
-    "source_url": "https://github.com/za3k/day32_tvguide",
+    "source_url": "https://github.com/za3k/day33_tvguide",
     "subdir": "/hackaday/tvguide",
     "description": "A TV guide generated from wikipedia.",
     "instructions": "",

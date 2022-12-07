@@ -1,0 +1,11 @@
+[Unit]
+Description=gunicorn3 for hackaday-33-tvguide
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/hackaday/day33_tvguide
+ExecStart=/bin/gunicorn3 -e SCRIPT_NAME=/hackaday/tvguide --bind 0.0.0.0:8033 app:app
+
+[Install]
+WantedBy=multi-user.target
