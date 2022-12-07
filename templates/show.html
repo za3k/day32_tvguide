@@ -1,0 +1,44 @@
+{% extends 'base2.html' %}
+
+{% block header %}
+    <p><i><b>{{ project_name }}</b></i>: {{ description }} {{ instructions | safe }}</p>
+{% endblock %}
+
+{% block content %}
+    <h3>TV Guide - {{show.name}}</h3>
+    {% if show.show %}
+        <h3 class="info"><a href="{{show.url}}">Source</a> (wikipedia)</h3>
+        {% if show.seasons %}
+            <h3 class="info">Episodes</h3>
+            <table>
+                <tr>
+                    <th>Season</th>
+                    <th>Episode</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                </tr>
+            {% for season in show.seasons | reverse %}
+                <tr class="season"><td colspan=4" class="season">{{season.name}}</td></tr>
+                {% for episode in season.episodes %}
+                    <tr>
+                        <td>{{episode.season}}</td>
+                        <td>{{episode.episode}}</td>
+                        <td>{{episode.date}}</td>
+                        <td>{{episode.title}}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+            </table>
+        {% endif %}
+
+
+        <table class="infobox">
+        <h3 class="info">Info</h3>
+        {% for label, value in show.info.items() %}
+            <tr><th>{{label}}</th><td>{{value}}</td></tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h2>Oops. This is not actually a real TV show. My bad.</h2>
+    {% endif %}
+{% endblock %}

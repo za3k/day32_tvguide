@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="{% if fullscreen %}fullscreen{% endif %}">
 <head>
-    <title>{% block title %}{% endblock %} - {{ project_name }}</title>
+    <title>{{ project_name }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <script src="{{ url_for('static', filename='js/jquery-3.6.1.js') }}"></script>
@@ -18,8 +18,6 @@
         {% endblock %}
         <li><a href="{{ url_for('about') }}">About</a>
     </ul>
-    {% if login %}
-    {% endif %}
     {% block extras %}{% endblock %}
     </div>
 </nav>

@@ -1,5 +1,66 @@
 /* -- This specific Hack-A-Day project -- */
+.content {
+    margin-left: 20px;
+}
 
+ul.letters {
+    list-style: none;
+}
+ul.letters li {
+    display: inline;
+    font-size: 36pt;
+}
+
+ul.shows {
+    list-style: none;
+}
+@media only screen and (min-width: 600px) {
+    ul.shows {
+        column-count: 6;
+    }
+}
+ul.shows a {
+    color: black;
+}
+ul.shows li {
+    margin-bottom: 8px;
+}
+
+ul.pagination-links {
+    list-style: none;
+}
+ul.pagination-links > li {
+    display: inline;
+    font-size: 24pt;
+}
+
+
+table, h3.season, h3.info {
+    margin: 20px 0 0 20px;
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+td.season {
+    background-color: yellow;
+    text-align: center;
+}
+
+table td, table th, table td {
+    padding: 0 4px 0 4px;
+    border: 1px solid;
+}
+
+table:not(.infobox) tr:nth-child(1) {
+    background-color: yellow;
+}
+table tr:nth-child(even) {
+    background-color: lightyellow;
+}
 /* -- All Hack-A-Day projects -- */
 
 .container {
