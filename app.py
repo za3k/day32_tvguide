@@ -56,20 +56,20 @@ BLACKLIST = {
 }
 class CrawlQueue():
     def __init__(self, init=[]):
-        self.known : Set[str] = set()
+        self.known = set()
         for x in init:
             self.add(x)
     def add(self, x: str):
         if x in self.known: pass
         if x in BLACKLIST: pass
         self.known.add(x)
-    def extend(self, new: list[str]):
+    def extend(self, new):
         for x in new:
             self.add(x)
     def __len__(self):
         return len(self.known)
     def __iter__(self):
-        crawled : Set[str] = set()
+        crawled = set()
         new = True
         while new:
             new = False
