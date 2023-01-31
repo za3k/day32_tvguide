@@ -85,8 +85,8 @@ def cached(f):
         key = f.__name__ +"("+", ".join(map(repr, args))+")"
         if key in func_cache:
             r = func_cache[key]
-            if r["last_crawled"] >= (datetime.today() - timedelta(days=30)):
-                return r["content"]
+            #if r["last_crawled"] >= (datetime.today() - timedelta(days=30)):
+            return r["content"]
         r = f(*args)
         func_cache[key] = {
             "last_crawled": datetime.now(),
